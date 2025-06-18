@@ -132,15 +132,18 @@ img {
     gap: 0.75rem;
     text-decoration: none !important;
     color: var(--text-color);
-    font-weight: 700;
-    font-size: 1.5rem;
-    letter-spacing: 1px;
+    font-family: 'norwester', sans-serif;
+    font-weight: 400;
+    font-size: 1.8rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
     transition: var(--transition);
     border-bottom: none;
 }
 
 .navbar__logo:hover {
     color: var(--primary-color);
+    transform: scale(1.02);
 }
 
 .navbar__logo svg {
@@ -2747,14 +2750,12 @@ section {
 }
 
 /* Dark mode adjustments */
-[data-theme="dark"] .partner-logo-container {
-    background: rgba(0, 0, 0, 0.2);
-    border-color: rgba(255, 255, 255, 0.05);
+[data-theme="dark"] .partner-logo {
+    filter: grayscale(100%) brightness(1.5) contrast(1.2);
 }
 
-[data-theme="dark"] .partner-slide.center-active .partner-logo-container {
-    background: rgba(0, 0, 0, 0.3);
-    border-color: var(--primary-color);
+[data-theme="dark"] .partner-logo:hover {
+    filter: grayscale(0%) brightness(1) contrast(1);
 }
 
 /* Responsive adjustments */
@@ -2770,8 +2771,10 @@ section {
     }
     
     .partners__carousel {
-        min-height: 120px;
-        padding: 1rem 0;
+        min-height: 150px;
+        padding: 1.5rem 0;
+        display: flex;
+        align-items: center;
     }
     
     .ticker-track {
@@ -2784,29 +2787,32 @@ section {
     }
     
     .partner-logo-container {
-        padding: 1.5rem;
-        min-width: 180px;
-        height: 110px;
-        border-radius: 18px;
+        padding: 1rem;
+        min-width: 200px;
+        height: auto;
         display: flex;
         align-items: center;
         justify-content: center;
-        margin: 0 8px;
-        background: rgba(255, 255, 255, 0.95);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        margin: 0 15px;
+        background: transparent !important;
+        box-shadow: none !important;
+        border: none !important;
     }
     
     .partner-logo {
-        max-height: 70px;
+        max-height: 80px;
         width: auto;
-        max-width: 100%;
+        max-width: 180px;
         object-fit: contain;
         filter: grayscale(100%) contrast(1.2);
-        transition: filter 0.3s ease;
+        transition: all 0.3s ease;
+        opacity: 0.8;
     }
     
     .partner-logo:hover {
         filter: grayscale(0%) contrast(1);
+        opacity: 1;
+        transform: scale(1.05);
     }
 }
 
